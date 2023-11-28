@@ -5,6 +5,8 @@
     <div class="artwork-card">
       <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
       <p><%= artwork.name %></p>
+
+      <%= link_to 'Request Booking', new_artwork_booking_request_path(@artwork) %>
     </div>
   <% end %>
 </div>
