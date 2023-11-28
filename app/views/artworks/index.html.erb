@@ -1,3 +1,5 @@
+<p style="color: green"><%= notice %></p>
+
 <h1>All Artworks</h1>
 
 <div class="artwork-list">
@@ -5,6 +7,9 @@
     <div class="artwork-card">
       <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
       <p><%= artwork.name %></p>
+    </div>
+  <% end %>
+</div>
 
       <%= link_to 'Request Booking', new_artwork_booking_request_path(@artwork) %>
     </div>
