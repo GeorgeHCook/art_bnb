@@ -1,19 +1,5 @@
-<<<<<<< HEAD
 <p style="color: green"><%= notice %></p>
 
-<h1>Artworks</h1>
-
-<div id="artworks">
-  <% @artworks.each do |artwork| %>
-    <%= render artwork %>
-    <p>
-      <%= link_to "Show this artwork", artwork %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New artwork", new_artwork_path %>
-=======
 <h1>All Artworks</h1>
 
 <div class="artwork-list">
@@ -24,4 +10,8 @@
     </div>
   <% end %>
 </div>
->>>>>>> 7798513341b62449cf324f55282f90d2c1ae1f99
+
+      <%= link_to 'Request Booking', new_artwork_booking_request_path(@artwork) %>
+    </div>
+  <% end %>
+</div>

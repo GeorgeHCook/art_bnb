@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :artworks
   devise_for :users
   root to: "pages#home"
-  resources :artworks, only: [ :edit, :update ]
+  resources :artworks, only: [:index, :show, :edit, :update ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,9 +11,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-<<<<<<< HEAD
-
-=======
-  resources :artworks, only: [:index]
->>>>>>> 7798513341b62449cf324f55282f90d2c1ae1f99
 end

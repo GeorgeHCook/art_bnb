@@ -1,5 +1,4 @@
 class ArtworksController < ApplicationController
-<<<<<<< HEAD
   before_action :set_artwork, only: %i[ show edit update destroy ]
 
   # GET /artworks or /artworks.json
@@ -68,9 +67,4 @@ class ArtworksController < ApplicationController
     def artwork_params
       params.fetch(:artwork, {})
     end
-=======
-  def index
-    @artworks = Artwork.all
-  end
->>>>>>> 7798513341b62449cf324f55282f90d2c1ae1f99
 end
