@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p style="color: green"><%= notice %></p>
 
 <h1>Artworks</h1>
@@ -12,3 +13,15 @@
 </div>
 
 <%= link_to "New artwork", new_artwork_path %>
+=======
+<h1>All Artworks</h1>
+
+<div class="artwork-list">
+  <% @artworks.each do |artwork| %>
+    <div class="artwork-card">
+      <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
+      <p><%= artwork.name %></p>
+    </div>
+  <% end %>
+</div>
+>>>>>>> 7798513341b62449cf324f55282f90d2c1ae1f99
