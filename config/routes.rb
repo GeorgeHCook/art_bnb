@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :artworks, only: [:index]
+  resources :artworks, only: [:index, :show] do
+    member do
+      get 'new_booking_request', to: 'artworks#new_booking_request'
+      post 'create_booking_request', to: 'artworks#create_booking_request'
+    end
+  end
 end
