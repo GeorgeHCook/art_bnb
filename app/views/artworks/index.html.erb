@@ -1,7 +1,10 @@
 <h1>All Artworks</h1>
 
-<ul>
+<div class="artwork-list">
   <% @artworks.each do |artwork| %>
-    <li><%= artwork.name %></li>
+    <div class="artwork-card">
+      <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
+      <p><%= artwork.name %></p>
+    </div>
   <% end %>
-</ul>
+</div>
