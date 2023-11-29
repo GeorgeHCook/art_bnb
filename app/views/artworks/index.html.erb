@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>All Artworks</h1>
 
 <div class="artwork-list">
   <% @artworks.each do |artwork| %>
     <div class="artwork-card">
-      <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
-      <p><%= artwork.name %></p>
+      <img src="<%= artwork.image_url %>" alt="<%= artwork.title %> Image"> <!-- still need to add image -->
+      <p><%= artwork.title %></p>
+      <%= link_to 'Request Booking', new_artwork_booking_request_path(artwork) %>
     </div>
   <% end %>
 </div>
 
-<%= link_to 'Request Booking', new_artwork_booking_request_path(@artwork) %>
+<!-- card to be repeated in line with styling, have limited images to the first 10 in controller -->

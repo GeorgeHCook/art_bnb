@@ -2,7 +2,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks or /artworks.json
   def index
-    @artworks = Artwork.all.limit(10)
+    @artworks = Artwork.all.limit(10) #limits index to first ten images
   end
 
   def show
