@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+
+.banner {
+  padding-top  : 100px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  height : 500px;
+  background-image:
+    url('https://artlogic-res.cloudinary.com/w_1200,h_630,c_fill,f_auto,fl_lossy,q_auto/ws-cuturigallery/usr/images/artworks/main_image/items/f7/f73fa2d1b92b426ab3fc7a39246f9d12/spring-haze-2021-oil-pastel-spray-on-paper-76x57.5cm-andrew-salgado.jpg');
+}
+
+.artwork-list {
+  // to turn a div into a grid
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.artwork-card {
+  // the card inside a grid
+  height: 300px;
+  background-size: cover;
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+.line {
+  width: 100%;
+  background: lightgray;
+  height: 1px;
+  margin: 2rem 0 1rem 0;
+}

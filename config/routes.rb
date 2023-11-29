@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # resources :artworks
   devise_for :users
-  root to: "pages#home"
+  root to: "artworks#index"
 
   get "dashboard", to: "pages#dashboard"
-  resources :artworks, only: [:index, :show] do
+  resources :artworks, only: [ :show] do
     resources :bookings, only: [:index, :new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

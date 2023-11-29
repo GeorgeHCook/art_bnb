@@ -3,17 +3,18 @@ class BookingsController < ApplicationController
   before_action :set_artwork, only: [:new, :create]
 
   def new
-    @booking = @artwork.bookings.new
+    @booking = Booking.new
   end
 
   def create
-    @booking = @artwork.bookings.build(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.artwork = @artwork
 
-    if @booking.save
-      redirect_to @artwork, notice: 'Booking request sent.'
+    if @booking.save!
+      redirect_to artwork_path(@artwork)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,10 +26,5 @@ class BookingsController < ApplicationController
 
   def set_artwork
     @artwork = Artwork.find_by(id: params[:artwork_id])
-
-    return if @artwork
-
-    flash.now[:alert] = 'Artwork not found.'
-    render :new
   end
 end
