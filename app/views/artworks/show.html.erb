@@ -1,7 +1,13 @@
 <h1><%= @artwork.title %></h1>
 
+<%= image_tag(@artwork.image, alt: @artwork.title) %><br>
+<p>
+  <strong>Description:</strong><br>
+  <%= @artwork.description %><br>
+  <strong>Category:</strong><br>
+  <%= @artwork.category %><br>
+  <strong>Price:</strong><br>
+  <%= @artwork.price_per_day %> per day
+</p>
 
-
-<div>
   <%= link_to "Back to artworks", artworks_path(@artworks) %>
-</div>
