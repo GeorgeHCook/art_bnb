@@ -1,14 +1,21 @@
-<h1>All Artworks</h1>
+<div class="banner">
+  <div>
+    <h1><strong>Welcome to ARTbnb</strong></h1>
+    <h5>Where creatvity checks-in</h5>
+  </div>
+</div>
 
+<div class="line"></div>
 <div class="artwork-list">
   <% @artworks.each do |artwork| %>
+    <%= link_to artwork_path(artwork) do %>
     <div class="artwork-card">
-      <% if artwork.image %>
+      <% if !artwork.image.nil? %>
         <img src="<%= artwork.image %>" alt="<%= artwork.title %> Image"> <!-- still need to add image -->
       <% end %>
-      <p><%= artwork.title %></p>
 
     </div>
+    <% end %>
   <% end %>
 </div>
 
