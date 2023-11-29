@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
+  before_action :set_artwork, only: [:new, :create]
 
   def new
     @booking = @artwork.bookings.new
