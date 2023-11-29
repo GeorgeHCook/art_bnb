@@ -1,2 +1,7 @@
-<%= @artworks.all %>
-git 
+<% @artworks.each do |artwork| %>
+  <%= link_to artwork.title, artwork %>
+<% end %>
+
+<% @bookings.each do |booking| %>
+  <%= link_to booking, booking %>
+<% end %>
