@@ -1,13 +1,14 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, except: [:new, :create]
+
   def new
-    @artwork = Artwork.find(params[:artwork_id])
-    @booking = Booking.new
+    @booking = @artwork.bookings.new
   end
 
   def create
-    @artwork = Artwork.find(params[:artwork_id])
-    @booking = @artwork.booking.build(booking_params)
+    @booking = @artwork.bookings.build(booking_params)
     @booking.user = current_user
+
     if @booking.save
       redirect_to @artwork, notice: 'Booking request sent.'
     else
@@ -18,6 +19,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :message)
+  end
+
+  def set_artwork
+    @artwork = Artwork.find_by(id: params[:artwork_id])
+
+    return if @artwork
+
+    flash.now[:alert] = 'Artwork not found.'
+    render :new
   end
 end
