@@ -1,6 +1,9 @@
 <h1><%= @artwork.title %></h1>
 
-<%= image_tag(@artwork.image, alt: @artwork.title) %><br>
+<% if @artwork.image %>
+  <%= image_tag(@artwork.image, alt: @artwork.title) %><br>
+
+<% end %>
 <p>
   <strong>Description:</strong><br>
   <%= @artwork.description %><br>
@@ -9,5 +12,5 @@
   <strong>Price:</strong><br>
   <%= @artwork.price_per_day %> per day
 </p>
-
-  <%= link_to "Back to artworks", artworks_path(@artworks) %>
+<%#= link_to 'Request Booking', new_booking_path(@artwork) %>
+<%= link_to "Back to artworks", artworks_path(@artworks) %>

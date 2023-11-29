@@ -3,9 +3,11 @@
 <div class="artwork-list">
   <% @artworks.each do |artwork| %>
     <div class="artwork-card">
-      <img src="<%= artwork.image_url %>" alt="<%= artwork.title %> Image"> <!-- still need to add image -->
+      <% if artwork.image %>
+        <img src="<%= artwork.image %>" alt="<%= artwork.title %> Image"> <!-- still need to add image -->
+      <% end %>
       <p><%= artwork.title %></p>
-      <%= link_to 'Request Booking', new_artwork_booking_request_path(artwork) %>
+
     </div>
   <% end %>
 </div>
