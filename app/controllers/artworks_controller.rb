@@ -3,7 +3,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks or /artworks.json
   def index
-    @artworks = Artwork.all
+    @artworks = Artwork.all.limit(10)
   end
 
   # GET /artworks/1 or /artworks/1.json
