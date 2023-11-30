@@ -1,52 +1,57 @@
-puts 'Creating users and artwork'
+puts 'Cleaning database...'
+Movie.destroy_all
+puts 'Creating Users & artworks...'
+
 
 user1 = User.create(
-  first_name:     'John',
-  last_name:      'Smith',
-  email:          'john@example.com',
-  password:       'password'
+  first_name: 'Alexander',
+  last_name: 'Calder',
+  email: 'hangmeup@example.com',
+  password: 'password'
 )
 
 user2 = User.create(
-  first_name:  'Helen',
-  last_name:  'Brown',
-  email:    'helen@example.com',
+  first_name: 'Egon',
+  last_name: 'Scheile',
+  email: 'ilovenudes@example.com',
   password: 'password'
 )
 
 user3 = User.create(
-  first_name:  'Naomi',
-  last_name:  'Dodds',
-  email:    'naomi@example.com',
+  first_name: 'Mark',
+  last_name: 'Rothko',
+  email: '4sides2colors@example.com',
   password: 'password'
 )
 
 user4 = User.create(
-  first_name:     'Chris',
-  last_name:  'Miller',
-  email:    'chris@example.com',
+  first_name: 'Salvador',
+  last_name: 'Dali',
+  email: 'anteaterman123@example.com',
   password: 'password'
 )
 
 user5 = User.create(
-  first_name:     'Sam',
-  last_name:  'Hobbs',
-  email:    'sam@example.com',
+  first_name: 'Jean-Michel',
+  last_name: 'Basquiat',
+  email: 'crown@example.com',
   password: 'password'
 )
 
 Artwork.create(
-  title: "Starry Night",
-  description: "A masterpiece by Vincent van Gogh, depicting a mesmerizing night sky filled with swirling stars and a quaint village below.",
-  category: "Painting",
-  user: "user 1"
+  title: "Double Gong",
+  description: "A mixed media mobile, of sheet metal, wire, and paint",
+  category: "Sculpture",
+  image: "https://sfmoma-media-dev.s3.us-west-1.amazonaws.com/www-media/2022/05/21014105/FC.671_01_H02-Artsy-JPEG_4000-pixels-long.jpg",
+  user: user1
 )
 
 
 Artwork.create(
   title: "The Persistence of Memory",
   description: "Salvador Dalí's surreal masterpiece featuring melting clocks draped over various objects, challenging our perception of time.",
-  category: "Painting",
+  category: "Sculpture",
+  image: "https://static.wixstatic.com/media/f4938a_7888cf4599554b0ca573db7b5871c44b~mv2_d_1600_2000_s_2.jpg/v1/fill/w_644,h_792,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f4938a_7888cf4599554b0ca573db7b5871c44b~mv2_d_1600_2000_s_2.jpg",
   user: "user 1"
 )
 
