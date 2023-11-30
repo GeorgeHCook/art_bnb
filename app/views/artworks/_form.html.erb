@@ -1,0 +1,8 @@
+<%= simple_form_for [@artwork] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.input :price_per_day %>
+    <%= f.input :image %>
+    <%= f.submit "Add artwork", class: "btn btn-primary" %>
+  <% end %>
