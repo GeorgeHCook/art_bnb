@@ -1,11 +1,29 @@
 class ArtworksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  # GET /artworks or /artworks.json
-  def index
-    @artworks = Artwork.all.limit(10) #limits index to first ten images
+  before_action :authenticate_user!, except: [:new, :create]
+  before_action :set_artwork, only: [:new, :create,]
+
+  def new
+    @artwork = Artwork.new
   end
 
-  def show
-    @artwork = Artwork.find(params[:id])
+  def create
+    @artwork = Artwork.new(artwork_params)
+    @artwork.user = current_user
+
+    if @artwork.save!
+      redirect_to artwork_path(@artwork)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def artwork_params
+    params.require(:artwork).permit(:title, :description, :artist, :image, :price, :availability)
+  end
+
+  def set_artwork
+    @artwork = Artwork.find_by(id: params[:artwork_id]) || Artwork.find(params[:id])
   end
 end
