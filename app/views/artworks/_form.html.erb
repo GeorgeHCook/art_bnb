@@ -4,5 +4,9 @@
     <%= f.input :category %>
     <%= f.input :price_per_day %>
     <%= f.input :image %>
+    <% if @artwork.persisted? %>
+    <%= f.submit "edit artwork", class: "btn btn-primary" %>
+    <% else %>
     <%= f.submit "Add artwork", class: "btn btn-primary" %>
+    <% end %>
   <% end %>

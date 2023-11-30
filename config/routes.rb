@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "artworks#index"
 
   get "dashboard", to: "pages#dashboard"
-  resources :artworks, only: [:new, :create, :show] do
+  resources :artworks, only: [:new, :create, :show, :edit, :update] do
     resources :bookings, only: [:index, :new, :create, :update]
   end
   resources :bookings, only: [:destroy]
