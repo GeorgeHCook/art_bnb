@@ -1,24 +1,23 @@
-.artwork-list {
+#artwork-list {
   // to turn a div into a grid
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   padding: 1rem;
-}
 
-.artwork-card {
-  // the card inside a grid
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  
-
-  img {
-    width: 100%;
+  .artwork-card {
+    // the card inside a grid
+    overflow: visible;
     height: 300px;
-    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    align-items: center;
+
+
+    img {
+      height: 100%;
+      width: 120px;
+      object-fit: cover;
+    }
+
   }
 }

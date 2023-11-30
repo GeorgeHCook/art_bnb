@@ -1,21 +1,16 @@
-<div id="container">
-  <div class="image">
-    <% if @artwork.image %>
-      <%= image_tag(@artwork.image, alt: @artwork.title) %><br>
-    <% end %>
+
+<div class="card-artwork">
+  <%= image_tag(@artwork.image, alt: @artwork.title) %>
+  <div class="card-artwork-infos">
+    <div>
+      <h1><%= @artwork.title %></h1>
+      <p><%= @artwork.description %></p>
+    </div>
   </div>
-  <div class="title">
-    <h1><%= @artwork.title %></h1>
-  </div>
-  <div class="price">
-    <strong>Price:</strong><br>
-    <%= @artwork.price_per_day %> per day
-  </div>
-    <strong>Description:</strong><br>
-    <%= @artwork.description %><br>
-    <strong>Category:</strong><br>
-    <%= @artwork.category %><br>
-  </p>
-  <%= link_to 'Request Booking', new_artwork_booking_path(@artwork) %><br>
-  <%= link_to "Back to artworks", root_path %>
+  <div>
+    <h2 class="artwork-price"><%= @artwork.price_per_day %> per day</h2>
+    <div class="btn btn-dark btn-sm">
+      <%= link_to 'Request Booking', new_artwork_booking_path(@artwork), :class => "btn" %>
+    </div>
+    <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
 </div>

@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create]
-    skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, except: [:new, :create, :edit]
+    skip_before_action :authenticate_user!, only: [:index, :show, :edit]
 
   def index
     @artworks = Artwork.all
