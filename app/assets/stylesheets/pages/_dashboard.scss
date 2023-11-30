@@ -1,0 +1,19 @@
+.artwork-list {
+  // to turn a div into a grid
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.artwork-card {
+  // the card inside a grid
+  height: 300px;
+  background-size: cover;
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
