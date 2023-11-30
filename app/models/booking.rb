@@ -6,4 +6,5 @@ class Booking < ApplicationRecord
   # validates :end_date, presence: true
   # validates :status, presence: true
   # validates :user, presence: true, uniqueness: { scope: :artwork }
+  
 end
