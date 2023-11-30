@@ -18,6 +18,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, notice: 'Booking was successfully destroyed.'
+   end
+
+
+
   private
 
   def booking_params
@@ -27,4 +35,7 @@ class BookingsController < ApplicationController
   def set_artwork
     @artwork = Artwork.find_by(id: params[:artwork_id])
   end
+
+
+
 end
