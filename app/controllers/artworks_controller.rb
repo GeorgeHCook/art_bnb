@@ -31,7 +31,6 @@ class ArtworksController < ApplicationController
 
   def update
     set_artwork
-
     if @artwork.update(artwork_params)
       redirect_to artwork_path(@artwork), notice: 'Artwork was successfully updated.'
     else
@@ -42,7 +41,7 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:title, :description, :artist, :image, :price, :availability)
+    params.require(:artwork).permit(:title, :description, :artist, :image, :price_per_day, :availability)
   end
 
   def set_artwork
