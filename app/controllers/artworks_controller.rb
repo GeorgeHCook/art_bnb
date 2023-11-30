@@ -25,6 +25,20 @@ class ArtworksController < ApplicationController
     set_artwork
   end
 
+  def edit
+    set_artwork
+  end
+
+  def update
+    set_artwork
+
+    if @artwork.update(artwork_params)
+      redirect_to artwork_path(@artwork), notice: 'Artwork was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def artwork_params
