@@ -1,11 +1,38 @@
 class ArtworksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  # GET /artworks or /artworks.json
+  before_action :authenticate_user!, except: [:new, :create]
+    skip_before_action :authenticate_user!, only: [:index, :show]
+  
   def index
     @artworks = Artwork.all
+
+  def new
+    @artwork = Artwork.new
   end
 
+  def create
+    @artwork = Artwork.new(artwork_params)
+    @artwork.user = current_user
+
+    if @artwork.save!
+      redirect_to artwork_path(@artwork)
+    else
+      render :new, status: :unprocessable_entity
+    end
+    
   def show
-    @artwork = Artwork.find(params[:id])
+    set_artwork
+  end
+    
+  private
+    
+  def artwork_params
+    params.require(:artwork).permit(:title, :description, :artist, :image, :price, :availability)
+  end
+
+  def set_artwork
+    @artwork = Artwork.find_by(id: params[:artwork_id]) || Artwork.find(params[:id])
   end
 end
+
+  
+
