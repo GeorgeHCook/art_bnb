@@ -1,4 +1,7 @@
-puts 'Creating users and artwork'
+puts 'Cleaning database...'
+Movie.destroy_all
+puts 'Creating Users & artworks...'
+
 
 user1 = User.create(
   first_name:     'John',

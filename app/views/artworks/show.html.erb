@@ -1,16 +1,21 @@
-<h1><%= @artwork.title %></h1>
-
-<% if @artwork.image %>
-  <%= image_tag(@artwork.image, alt: @artwork.title) %><br>
-
-<% end %>
-<p>
-  <strong>Description:</strong><br>
-  <%= @artwork.description %><br>
-  <strong>Category:</strong><br>
-  <%= @artwork.category %><br>
-  <strong>Price:</strong><br>
-  <%= @artwork.price_per_day %> per day
-</p>
-<%#= link_to 'Request Booking', new_booking_path(@artwork) %>
-<%= link_to "Back to artworks", root_path %>
+<div id="container">
+  <div class="image">
+    <% if @artwork.image %>
+      <%= image_tag(@artwork.image, alt: @artwork.title) %><br>
+    <% end %>
+  </div>
+  <div class="title">
+    <h1><%= @artwork.title %></h1>
+  </div>
+  <div class="price">
+    <strong>Price:</strong><br>
+    <%= @artwork.price_per_day %> per day
+  </div>
+    <strong>Description:</strong><br>
+    <%= @artwork.description %><br>
+    <strong>Category:</strong><br>
+    <%= @artwork.category %><br>
+  </p>
+  <%= link_to 'Request Booking', new_artwork_booking_path(@artwork) %><br>
+  <%= link_to "Back to artworks", root_path %>
+</div>
