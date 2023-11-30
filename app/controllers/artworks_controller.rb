@@ -5,15 +5,14 @@ class ArtworksController < ApplicationController
   def index
     @artworks = Artwork.all
   end
-
-  def new
     @artwork = Artwork.new
   end
 
   def create
     @artwork = Artwork.new(artwork_params)
     @artwork.user = current_user
-
+  end
+  
     if @artwork.save!
       redirect_to artwork_path(@artwork)
     else
@@ -35,3 +34,5 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find_by(id: params[:artwork_id]) || Artwork.find(params[:id])
   end
 end
+
+
