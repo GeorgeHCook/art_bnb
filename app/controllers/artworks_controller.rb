@@ -1,6 +1,5 @@
 class ArtworksController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
-  before_action :set_artwork, only: [:new, :create,]
 
   def new
     @artwork = Artwork.new
@@ -17,6 +16,9 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def show
+    set_artwork
+  end
   private
 
   def artwork_params

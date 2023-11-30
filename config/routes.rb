@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "artworks#index"
 
   get "dashboard", to: "pages#dashboard"
-  resources :artworks, only: [ :show] do
+  resources :artworks, only: [:new, :create, :show] do
     resources :bookings, only: [:index, :new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
