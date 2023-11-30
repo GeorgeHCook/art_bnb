@@ -1,16 +1,18 @@
-<div class="artwork-list">
+<div id="artwork-list">
   <% @artworks.each do |artwork| %>
-    <%= link_to artwork do %>
     <div class="artwork-card">
+      <%= link_to artwork do %>
         <img src="<%= artwork.image %>" alt="<%= artwork.title %>" />
-        <%= link_to "edit this artwork", edit_artwork_path(artwork) %>
-      <% end %>
-      bookings for this peice:<br>
-      <% artwork.bookings.each do |booking| %>
-        <%= booking.message %>
+          <div class="card-artwork-info">
+            <strong><%= artwork.title %></strong>
+            <%= link_to "edit this artwork", edit_artwork_path(artwork) %>
+              bookings for this peice:
+            <% artwork.bookings.each do |booking| %>
+              <%= booking.message %>
+            <% end %>
+          </div>
       <% end %>
     <div>
-  <%# iterate through bookings for artwork here %>
   <% end %>
 </div>
 <br>

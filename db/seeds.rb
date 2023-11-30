@@ -40,6 +40,7 @@ user5 = User.create(
 )
 
 Artwork.create!(
+  price_per_day: 200,
   title: "Double Gong",
   description: "A mixed media mobile, of sheet metal, wire, and paint",
   category: "Sculpture",
@@ -49,6 +50,7 @@ Artwork.create!(
 
 
 Artwork.create(
+  price_per_day: 200,
   title: "Man on Wire",
   description: "Single wire sculpture of men on wires",
   category: "Sculpture",
@@ -57,6 +59,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Brazillian fish",
   description: "Mixed media mobile, depicting a fish",
   category: "Painting",
@@ -65,6 +68,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Self Portrait",
   description: "Watercolor, gouache, and graphite on paper, depicting a self portrait.",
   category: "Painting",
@@ -73,6 +77,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Seated Male Nude, Right Hand Outstretched",
   description: "Painting of contorted main nude, with no visable head, with arm outstretched.",
   category: "Painting",
@@ -81,6 +86,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Composition with Three Male Figures",
   description: "Three male figues overlap, monotone using reds",
   category: "Painting",
@@ -89,6 +95,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "No. 1 (Royal Red and Blue)",
   description: "Colour field painting, oil on canvas, red and blue.",
   category: "Painting",
@@ -97,6 +104,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "White Center",
   description: "Yellow, Pink and Lavender on Rose, colour field painting, oil on canvas, 1950.",
   category: "Painting",
@@ -105,6 +113,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "No. 3",
   description: "Oil on canvas, colour field, bright red and raw canvas",
   category: "Painting",
@@ -113,6 +122,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Beginings",
   description: "Lyrical abstraction, oil wash on raw canvas",
   category: "Painting",
@@ -121,6 +131,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Mauve District",
   description: "1966 abstract colour field work, acrylic poured on canvas.",
   category: "Painting",\
@@ -129,6 +140,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Tutti-Fruitti",
   description: "Lyrical volour field abstraction, earthen acrylic on canvas. 1966",
   category: "Painting",
@@ -137,6 +149,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Untitled",
   description: "Famously known as Skull, created in 1981 at the age of 20",
   category: "Contemporary Graffiti",
@@ -145,6 +158,7 @@ Artwork.create(
 )
 
 Artwork.create(
+  price_per_day: 200,
   title: "Riding with Death",
   description: "Vocal peice about political and racial issues of the time",
   category: "Painting",
@@ -152,8 +166,8 @@ Artwork.create(
   user_id: user5.id
 )
 
-
 Artwork.create(
+  price_per_day: 200,
   title: "Flexible",
   description: "new-expressionist portrait of a shattered man",
   category: "Screen Print",

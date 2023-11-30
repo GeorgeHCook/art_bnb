@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create]
-    skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, except: [:new, :create, :edit]
+    skip_before_action :authenticate_user!, only: [:index, :show, :edit]
 
   def index
     @artworks = Artwork.all
@@ -42,7 +42,7 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:title, :description, :artist, :image, :price, :availability)
+    params.require(:artwork).permit(:title, :description, :artist, :image, :price_per_day, :availability)
   end
 
   def set_artwork
