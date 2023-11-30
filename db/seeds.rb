@@ -48,11 +48,11 @@ Artwork.create(
 
 
 Artwork.create(
-  title: "The Persistence of Memory",
-  description: "Salvador Dalí's surreal masterpiece featuring melting clocks draped over various objects, challenging our perception of time.",
+  title: "Man on Wire",
+  description: "Single wire sculpture of men on wires",
   category: "Sculpture",
-  image: "https://static.wixstatic.com/media/f4938a_7888cf4599554b0ca573db7b5871c44b~mv2_d_1600_2000_s_2.jpg/v1/fill/w_644,h_792,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f4938a_7888cf4599554b0ca573db7b5871c44b~mv2_d_1600_2000_s_2.jpg",
-  user: "user 1"
+  image: "https://dl6pgk4f88hky.cloudfront.net/2021/06/2015_46_alexander_calder-scaled.jpg",
+  user: user1
 )
 
 Artwork.create(
