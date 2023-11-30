@@ -42,7 +42,7 @@ Artwork.create(
   title: "Starry Night",
   description: "A masterpiece by Vincent van Gogh, depicting a mesmerizing night sky filled with swirling stars and a quaint village below.",
   category: "Painting",
-  user: "user 1"
+  user: user1
 )
 
 
