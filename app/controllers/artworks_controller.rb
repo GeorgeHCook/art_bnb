@@ -5,7 +5,6 @@ class ArtworksController < ApplicationController
   def index
     @artworks = Artwork.all
   end
-  def new
     @artwork = Artwork.new
   end
 
@@ -19,6 +18,7 @@ class ArtworksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
   def show
     set_artwork
@@ -34,3 +34,5 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find_by(id: params[:artwork_id]) || Artwork.find(params[:id])
   end
 end
+
+

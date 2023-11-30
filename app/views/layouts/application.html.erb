@@ -20,15 +20,19 @@
           <%# <% end %>
           <img src="https://us.123rf.com/450wm/mamun25g/mamun25g2207/mamun25g220700365/188890182-art-letter-logo-design-with-polygon-shape-art-polygon-and-cube-shape-logo-design-art-hexagon-vector.jpg?ver=6" />
         </a>
-        <%= link_to "Dashboard", dashboard_path %>
-        <%= link_to "Home", root_path %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+            <li class="nav-item">
+              <%= link_to "Home", root_path %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Dashboard", dashboard_path %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Create Art", new_artwork_path %>
             </li>
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, data:{ turbo_method: :delete }, class:"nav-link" %>
