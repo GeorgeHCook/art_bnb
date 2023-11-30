@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
-  before_action :set_artwork, only: [:new, :create]
+  before_action :set_artwork, only: [:new, :create, :update]
 
   def new
     @booking = Booking.new
@@ -24,7 +24,14 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path, notice: 'Booking was successfully destroyed.'
    end
 
-
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+        redirect_to dashboard_path, notice: 'Booking was successfully updated.'
+    else
+        render :edit
+    end
+  end
 
   private
 
@@ -35,7 +42,4 @@ class BookingsController < ApplicationController
   def set_artwork
     @artwork = Artwork.find_by(id: params[:artwork_id])
   end
-
-
-
 end
