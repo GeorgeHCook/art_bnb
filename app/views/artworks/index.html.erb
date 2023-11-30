@@ -1,17 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="banner">
+  <div>
+    <h1><strong>Welcome to ARTbnb</strong></h1>
+    <h5>Where creatvity checks-in</h5>
+  </div>
+</div>
 
-<h1>All Artworks</h1>
-
+<div class="line"></div>
 <div class="artwork-list">
   <% @artworks.each do |artwork| %>
+    <%= link_to artwork_path(artwork) do %>
     <div class="artwork-card">
-      <img src="<%= artwork.image_url %>" alt="<%= artwork.name %> Image">
-      <p><%= artwork.name %></p>
+      <% if !artwork.image.nil? %>
+        <img src="<%= artwork.image %>" alt="<%= artwork.title %> Image"> <!-- still need to add image -->
+      <% end %>
+
     </div>
+    <% end %>
   <% end %>
 </div>
 
-      <%= link_to 'Request Booking', new_artwork_booking_request_path(@artwork) %>
-    </div>
-  <% end %>
-</div>
+<!-- card to be repeated in line with styling, have limited images to the first 10 in c ontroller -->

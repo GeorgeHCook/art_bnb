@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :artworks
+  # resources :artworks
   devise_for :users
-  root to: "pages#home"
-  resources :artworks, only: [:index, :show, :edit, :update ]
-  resources :bookings, only: [:index]
+  root to: "artworks#index"
+
+  get "dashboard", to: "pages#dashboard"
+  resources :artworks, only: [ :show] do
+    resources :bookings, only: [:index, :new, :create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
