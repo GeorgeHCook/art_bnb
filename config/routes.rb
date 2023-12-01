@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
   resources :artworks do
-    resources :bookings, only: [:index, :new, :create, :update, :show]
+    resources :bookings, only: [:index, :new, :create, :update, :show, :destroy]
   end
   resources :bookings, only: [:destroy]
   patch "approve", to: "bookings#approve"

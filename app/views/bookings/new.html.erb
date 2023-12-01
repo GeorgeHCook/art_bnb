@@ -1,7 +1,11 @@
-</div>
+<div class="container">
   <h1>New Booking Request</h1>
 
   <%= render 'form' %>
 
-  <%= link_to 'Back', artwork_path(@artwork) %>
+  <div id="button">
+    <%= link_to artwork_path(@artwork) do %>
+      <button type="button" class="btn btn-dark">Back</button>
+    <% end %>
+  </div>
 </div>
