@@ -1,20 +1,44 @@
 <div id="artwork-list">
   <% @artworks.each do |artwork| %>
-    <div class="artwork-card">
-      <%= link_to artwork do %>
-        <img src="<%= artwork.image %>" alt="<%= artwork.title %>" />
-          <div class="card-artwork-info">
-            <strong><%= artwork.title %></strong>
-            <%= link_to "edit this artwork", edit_artwork_path(artwork) %>
-              bookings for this peice:
-            <% artwork.bookings.each do |booking| %>
-              <%= booking.message %>
-            <% end %>
-          </div>
-      <% end %>
-    <div>
+    <%= link_to artwork_path(artwork) do %>
+      <div class="artwork-card">
+        <%= image_tag  artwork.image %>
+        <div>
+          <h5><strong><%= artwork.title %></strong></h5>
+          <%= link_to edit_artwork_path(artwork) do %>
+            <i id="edit" class="fa-solid fa-paintbrush" style="color: #000000;"></i>
+          <% end %>
+          <%# <div class="card-artwork-info"> %>
+            <h6>Bookings:</h6>
+          <%# <ul> %>
+            <p>
+              <% artwork.bookings.each do |booking| %>
+                <%# <li> %>
+                  <%= booking.start_date.strftime("%B %d, %Y") %>
+                  <% if booking.confirmed? %>
+                    <i id="tick" class="fa-solid fa-check" style="color: #089620;"></i>
+                  <% elsif booking.pending? %>
+                    <%= link_to approve_path(booking: { booking_id: booking.id}), data:{ turbo_method: :patch } do %>
+                      <i id="approve" class="fa-solid fa-check" style="color: #808080;"></i>
+                    <% end %>
+                    <%= link_to decline_path(booking: { booking_id: booking.id}), data:{ turbo_method: :patch } do %>
+                      <i id="decline" class="fa-solid fa-xmark" style="color: #808080;"></i>
+                    <% end %>
+                  <% elsif booking.declined? %>
+                    <i id="cross" class="fa-solid fa-xmark" style="color: #a20101;"></i>
+                  <% end %>
+                <%# </li> %>
+            <p>
+              <% end %>
+          <%# </ul> %>
+
+        </div>
+        <%# </div> %>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
 <br>
 Your bookings:
 <% @bookings.each do |booking| %>
