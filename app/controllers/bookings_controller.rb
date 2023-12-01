@@ -12,10 +12,27 @@ class BookingsController < ApplicationController
     @booking.artwork = @artwork
 
     if @booking.save!
-      redirect_to artwork_path(@artwork)
+      redirect_to artwork_booking_path(@artwork, @booking)
     else
       render :new, :unprocessable_entity
     end
+  end
+
+  def aprove
+    @booking = Booking.find(params[:id])
+    @booking.status = 2
+    #notice: 'Booking was sucessfully approved'
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = -1
+    #notice: 'Booking was sucessfully declined'
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    #@total_cost = calculate_total_cost(@booking)
   end
 
   def destroy
