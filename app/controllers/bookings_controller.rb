@@ -12,10 +12,14 @@ class BookingsController < ApplicationController
     @booking.artwork = @artwork
 
     if @booking.save!
-      redirect_to artwork_path(@artwork)
+      redirect_to artwork_booking_path(@artwork, @booking)
     else
       render :new, :unprocessable_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])\
   end
 
   def approve

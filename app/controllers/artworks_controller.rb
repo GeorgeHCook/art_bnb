@@ -38,6 +38,12 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    set_artwork
+    @artwork.destroy
+    redirect_to artworks_path, notice: 'Artwork was successfully deleted.'
+  end
+  
   private
 
   def artwork_params

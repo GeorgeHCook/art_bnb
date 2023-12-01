@@ -7,4 +7,8 @@ class Booking < ApplicationRecord
   # validates :status, presence: true
   # validates :user, presence: true, uniqueness: { scope: :artwork }
 
+  def total
+   days = (end_date - start_date).to_i
+   return (days * artwork.price_per_day)
+  end
 end
