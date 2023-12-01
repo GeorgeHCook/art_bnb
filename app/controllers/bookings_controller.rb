@@ -18,25 +18,39 @@ class BookingsController < ApplicationController
     end
   end
 
+  def approve
+    @booking = Booking.find(params[:booking][:booking_id])
+    @booking.confirmed!
+    @booking.update(booking_params)
+    redirect_to dashboard_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:booking][:booking_id])
+    @booking.declined!
+    @booking.update(booking_params)
+    redirect_to dashboard_path
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to dashboard_path, notice: 'Booking was successfully destroyed.'
-   end
+  end
 
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-        redirect_to dashboard_path, notice: 'Booking was successfully updated.'
+      redirect_to dashboard_path, notice: 'Booking was successfully updated.'
     else
-        render :edit
+      render :edit
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :message)
+    params.require(:booking).permit(:start_date, :end_date, :message, :status)
   end
 
   def set_artwork

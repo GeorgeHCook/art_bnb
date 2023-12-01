@@ -1,20 +1,87 @@
 #artwork-list {
   // to turn a div into a grid
-  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   padding: 1rem;
 
   .artwork-card {
     // the card inside a grid
+    margin-top: 1rem;
     overflow: visible;
-    height: 300px;
+    display: flex;
+    height: unset;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     align-items: center;
+    position: relative;
+
+    #edit {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      padding: 0.6rem;
+    }
+
+    p {
+      font-size: small;
+      line-height: 0.5;
+    }
+
+    h5 {
+      position: absolute;
+      top: 0px;
+      padding-bottom: 0.6rem;
+      padding-left: 0.6rem;
+      padding-top: .6rem;
+    }
+
+    h6 {
+      padding-top: 1rem;
+      padding-left: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+
+    #tick {
+      position: absolute;
+      right: 0px;
+      padding-right: 0.6rem;
+    }
+
+    #decline {
+      position: absolute;
+      right: 0px;
+      padding-right: 0.6rem;
+    }
+
+    #approve {
+      position: absolute;
+      right: 20px;
+      padding-right: 0.6rem;
+    }
+
+    #cross{
+      position: absolute;
+      right: 0px;
+      padding-right: 0.6rem;
+    }
+
+    a {
+      text-align: start;
+      text-decoration: none;
+      color: black;
+    }
+
+    p {
+      padding-left: .6rem;
+    }
+
+
+    .card-artwork-infos{
+      width: auto;
+    }
 
 
     img {
-      height: 100%;
+      height: 150px;
       width: 120px;
       object-fit: cover;
     }
