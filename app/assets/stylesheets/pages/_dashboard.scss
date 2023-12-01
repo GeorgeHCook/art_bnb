@@ -88,3 +88,41 @@
 
   }
 }
+
+.booking-list {
+  // to turn a div into a grid
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+
+  .booking-card {
+    // the card inside a grid
+    margin-top: 1rem;
+    overflow: visible;
+    display: flex;
+    height: unset;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    align-items: center;
+    position: relative;
+    padding:0.5rem;
+  }
+
+  #tick {
+    position: absolute;
+    right: 0px;
+    padding-right: 0.6rem;
+  }
+
+  #cross{
+    position: absolute;
+    right: 0px;
+    padding-right: 0.6rem;
+  }
+
+  #pending {
+    position: absolute;
+    right: 0px;
+    padding-right: 0.6rem;
+  }
+
+}

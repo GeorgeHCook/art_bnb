@@ -3,6 +3,28 @@
   background: white;
   position: sticky;
   top: 0;
+
+  .navbar-toggler {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-top: .5rem;
+    margin-right: 1rem;
+  }
+
+  .nav-item {
+    text-decoration: none;
+    color: black;
+  }
+
+  .navbar-nav{
+    display: flex;
+    justify-content: center;
+  }
+
+  .collapse{
+    align-items: right;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

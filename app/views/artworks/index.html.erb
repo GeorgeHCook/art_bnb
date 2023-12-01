@@ -1,7 +1,25 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://d7hftxdivxxvm.cloudfront.net/?height=2880&quality=80&resize_to=fit&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2FqIl5htcEtm0YL1x6IhrXFQ%252F181639469_5eb73749b5_o.jpg&width=2880);">
   <div class="container">
-    <h1><strong>Welcome to ARTbnb</strong></h1>
-    <h5>Where creatvity checks-in</h5>
+    <div class="title">
+      <h1><strong>Welcome to ARTbnb</strong></h1>
+      <h5>Where creatvity checks-in</h5>
+    </div>
+    <div class="intro">
+      Rent a little culture to impress your friends today!
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 my-3">
+        <%= form_with url: root_path, method: :get, class: "d-flex m-10" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a keyword",
+                autocomplete: "off"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

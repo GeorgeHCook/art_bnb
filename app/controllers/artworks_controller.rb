@@ -4,6 +4,10 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = Artwork.all
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR category ILIKE :query"
+      @artworks = @artworks.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def new
@@ -43,7 +47,7 @@ class ArtworksController < ApplicationController
     @artwork.destroy
     redirect_to artworks_path, notice: 'Artwork was successfully deleted.'
   end
-  
+
   private
 
   def artwork_params

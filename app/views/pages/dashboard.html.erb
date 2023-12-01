@@ -9,6 +9,7 @@
             <i id="edit" class="fa-solid fa-paintbrush" style="color: #000000;"></i>
           <% end %>
           <%# <div class="card-artwork-info"> %>
+            <% if !artwork.bookings.empty? %>
             <h6>Bookings:</h6>
           <%# <ul> %>
             <p>
@@ -31,6 +32,10 @@
             <p>
               <% end %>
           <%# </ul> %>
+          <% else %>
+          <p> Find someone to book this artwork!</p>
+
+            <% end %>
 
         </div>
         <%# </div> %>
@@ -40,8 +45,18 @@
 </div>
 
 <br>
-Your bookings:
-<% @bookings.each do |booking| %>
-  <%# <%= link_to booking.message, booking %><br>
-  <%= booking.message %>
-<% end %>
+<div class="booking-list">
+  Your bookings:
+  <% @bookings.each do |booking| %>
+    <div class="booking-card">
+      <%= booking.start_date.strftime("%B %d, %Y") %>
+      <% if booking.confirmed? %>
+        <i id="tick" class="fa-solid fa-check" style="color: #089620;"></i>
+      <% elsif booking.pending? %>
+        <i id="pending" class="fa-solid fa-question" style="color: #000000;"></i>
+      <% elsif booking.declined? %>
+        <i id="cross" class="fa-solid fa-xmark" style="color: #a20101;"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
