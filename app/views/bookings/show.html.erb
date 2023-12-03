@@ -1,16 +1,20 @@
 
-<% if booking.pending? %>
-  <h1>Your booking request has been sent!</h1>
-<% elsif booking.confirmed?  %>
-  <h1>Your booking in confirmed!</h1>
-  <p>We hope you enjoy having a bit of culture in your life!</p>
-<% elsif booking.declined? %>
-  <h1>Sorry, your booking has been declined!!</h1>
-<% end %>
-<p>
-Total cost of booking: £<%= @booking.total %>
-</p>
+<%# <% if booking.pending? %>
+  <%# <h1>Your booking request has been sent!</h1> %>
+<%# <% elsif booking.confirmed?  %>
+  <%# <h1>Your booking in confirmed!</h1> %>
+  <%# <p>We hope you enjoy having a bit of culture in your life!</p> %>
+<%# <% elsif booking.declined? %>
+  <%# <h1>Sorry, your booking has been declined!!</h1> %>
+<%# <% end %>
+<div class="container">
+  <h1>Booking confirmed!</h1>
+  <p>
+  Total cost of booking: £<%= @booking.total %>
+  </p>
 
-<div class="btn btn-dark btn-sm">
-  <%= link_to 'Back to artworks', root_path, :class => "btn" %>
+  <div class="btn btn-dark btn-sm">
+    <%= link_to 'Back to artworks', root_path, :class => "btn" %>
+  </div>
+
 </div>
